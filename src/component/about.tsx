@@ -42,9 +42,6 @@
 // 	);
 // }
 
-
-
-
 export default function About() {
 	return (
 		<section id="about" className="py-20 bg-white relative overflow-hidden">
@@ -103,12 +100,9 @@ export default function About() {
 								bringing it to life with precision, creativity, and respect for
 								the permanence of the medium.
 							</p>
-							<button
-							
-							className="border-black text-black hover:bg-black hover:text-white bg-transparent"
-						>
-							READ MORE
-						</button>
+							<button className="border-black text-black hover:bg-black hover:text-white bg-transparent">
+								READ MORE →
+							</button>
 						</div>
 					</div>
 				</div>

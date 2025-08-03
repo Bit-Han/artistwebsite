@@ -4,7 +4,7 @@ import Hero from "../component/hero";
 import Stats from "@/component/Stats";
 import Testimonial from "@/component/Testimonial";
 import Footer from "@/component/footer";
-import Articles from "@/component/articles";
+// import Articles from "@/component/articles";
 import Philosophy from "@/component/philosophy";
 import Contact from "@/component/contact";
 
@@ -17,7 +17,7 @@ export default function Home() {
 			<Stats />
 			<Testimonial />
 			<Philosophy	/>
-			<Articles />
+			{/* <Articles /> */}
 			<Contact />
 			<Footer />
 		</main>

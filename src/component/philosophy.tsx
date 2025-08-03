@@ -1,4 +1,5 @@
 import Image from "next/image";
+import About1 from "../../public/images/watch_interview.png";
 
 export default function Philosophy() {
 	return (
@@ -13,7 +14,7 @@ export default function Philosophy() {
 					</div>
 					<div className="relative h-96">
 						<Image
-							src="/placeholder.svg?height=400&width=400"
+							src={About1}
 							alt="Tattoo artist philosophy"
 							fill
 							className="object-cover rounded-lg filter grayscale"

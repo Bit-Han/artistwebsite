@@ -14,22 +14,20 @@ export default function Hero() {
 					src={heroimage}
 					alt="Tattoo artist at work"
 					fill
-					className="object-cover"
+					className="object-fill md:object-cover"
 					priority
 				/>
 				<div className="absolute inset-0 bg-black/40" />
 			</div>
 
-			<div className="relative z-10 flex-col justify-end items-end text-center text-white max-w-4xl mx-auto px-4">
-				<h1 className="text-6xl md:text-8xl font-bold mb-6">I am Void Sir.</h1>
-				<p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
+			<div className="relative z-10 left-75 flex-col justify-end items-end text-start text-white max-w-xl mx-auto px-2">
+				<h1 className="text-5xl md:text-8xl sm:text-4xl font-bold mb-6">I'm Void Sir.</h1>
+				<p className="text-sm font-light md:text-sm mb-8 mx-auto">
 					Creating unique tattoo art that tells your story. Every piece is
 					crafted with precision and passion.
 				</p>
 				<Link href="/booking">
-					<button
-						className="bg-white text-gray-800 hover:shadow-xl text-lg px-8 py-3 rounded-xl transition-colors duration-300"
-					>
+					<button className="border border-gray-100 text-white hover:shadow-xl text-lg px-8 py-3 rounded-xl transition-colors duration-300">
 						HIRE ME
 					</button>
 				</Link>

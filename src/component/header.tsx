@@ -2,9 +2,13 @@
 
 import { useState} from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X ,	Instagram,
+	Facebook,
+	Twitter,
+	MessageCircle,} from "lucide-react";
 import Logo from "../../public/images/void-tattoo-logo.png";
 import Image from "next/image";
+
 // import { Button } from "@/components/ui/button";
 
 export default function Header() {
@@ -34,7 +38,7 @@ export default function Header() {
 							<Link
 								key={item.name}
 								href={item.href}
-								className="text-sm font-medium hover:text-gray-600 transition-colors hover:underline"
+								className="text-sm font-medium hover:text-gray-800 transition-colors hover:underline hover:underline-offset-4 hover:decoration-2"
 							>
 								{item.name}
 							</Link>
@@ -42,11 +46,45 @@ export default function Header() {
 					</nav>
 
 					{/* Book Appointment Button */}
-					<Link href="/booking" className="hidden md:block">
+					{/* <Link href="/booking" className="hidden md:block">
 						<button className="bg-black text-white p-3 rounded-lg cursor-pointer hover:bg-gray-800">
 							BOOK NOW
 						</button>
-					</Link>
+					</Link> */}
+					<div className="hidden md:flex items-center space-x-4">
+						<a
+							href="https://instagram.com/voidtattoo"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-gray-600 hover:text-black transition-colors"
+						>
+							<Instagram className="w-5 h-5" />
+						</a>
+						<a
+							href="https://facebook.com/voidtattoo"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-gray-600 hover:text-black transition-colors"
+						>
+							<Facebook className="w-5 h-5" />
+						</a>
+						<a
+							href="https://twitter.com/voidtattoo"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-gray-600 hover:text-black transition-colors"
+						>
+							<Twitter className="w-5 h-5" />
+						</a>
+						<a
+							href="https://wa.me/15551234567"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-gray-600 hover:text-black transition-colors"
+						>
+							<MessageCircle className="w-5 h-5" />
+						</a>
+					</div>
 
 					{/* Mobile Menu Button */}
 					<button

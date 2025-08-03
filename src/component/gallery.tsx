@@ -1,133 +1,65 @@
-"use client";
-
-import { useState, useEffect } from "react";
 import Image from "next/image";
-// import { Button } from "@/components/ui/button";
-import { supabase } from "@/lib/supabase";
-
-interface GalleryImage {
-	id: string;
-	title: string;
-	description: string | null;
-	image_url: string;
-	category: string;
-	is_featured: boolean;
-}
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import gallery1 from "../../public/images/gallery1.png";
+import gallery2 from "../../public/images/gallary2.png";
+import gallery3 from "../../public/images/gallery3.png";
+import gallery4 from "../../public/images/gallery4.png";
+import gallery5 from "../../public/images/gallery5.png";
+import gallery6 from "../../public/images/gallery6.png";
+import gallery7 from "../../public/images/gallery7.png";
 
 export default function Gallery() {
-	const [images, setImages] = useState<GalleryImage[]>([]);
-	const [loading, setLoading] = useState(true);
-
-	useEffect(() => {
-		fetchGalleryImages();
-	}, []);
-
-	const fetchGalleryImages = async () => {
-		try {
-			const { data, error } = await supabase
-				.from("gallery")
-				.select("*")
-				.order("created_at", { ascending: false })
-				.limit(8);
-
-			if (error) throw error;
-
-			setImages(data || []);
-		} catch (error) {
-			console.error("Error fetching gallery images:", error);
-			// Fallback to placeholder images
-			setImages([
-				{
-					id: "1",
-					title: "Tattoo 1",
-					description: null,
-					image_url: "/placeholder.svg?height=300&width=300",
-					category: "general",
-					is_featured: false,
-				},
-				{
-					id: "2",
-					title: "Tattoo 2",
-					description: null,
-					image_url: "/placeholder.svg?height=300&width=300",
-					category: "general",
-					is_featured: false,
-				},
-				{
-					id: "3",
-					title: "Tattoo 3",
-					description: null,
-					image_url: "/placeholder.svg?height=300&width=300",
-					category: "general",
-					is_featured: false,
-				},
-				{
-					id: "4",
-					title: "Tattoo 4",
-					description: null,
-					image_url: "/placeholder.svg?height=300&width=300",
-					category: "general",
-					is_featured: false,
-				},
-				{
-					id: "5",
-					title: "Tattoo 5",
-					description: null,
-					image_url: "/placeholder.svg?height=300&width=300",
-					category: "general",
-					is_featured: false,
-				},
-				{
-					id: "6",
-					title: "Tattoo 6",
-					description: null,
-					image_url: "/placeholder.svg?height=300&width=300",
-					category: "general",
-					is_featured: false,
-				},
-				{
-					id: "7",
-					title: "Tattoo 7",
-					description: null,
-					image_url: "/placeholder.svg?height=300&width=300",
-					category: "general",
-					is_featured: false,
-				},
-				{
-					id: "8",
-					title: "Tattoo 8",
-					description: null,
-					image_url: "/placeholder.svg?height=300&width=300",
-					category: "general",
-					is_featured: false,
-				},
-			]);
-		} finally {
-			setLoading(false);
-		}
-	};
-
-	if (loading) {
-		return (
-			<section id="gallery" className="py-20 bg-gray-50">
-				<div className="container mx-auto px-4">
-					<h2 className="text-4xl md:text-5xl font-bold mb-12">
-						CHECK MY
-						<br />
-						GALLERY:
-					</h2>
-					<div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-						{[...Array(8)].map((_, index) => (
-							<div
-								key={index}
-								className="aspect-square bg-gray-200 rounded-lg animate-pulse"
-							/>
-						))}
-					</div>
-				</div>
-			</section>
-		);
-	}
+	const galleryImages = [
+		{
+			src: gallery1,
+			alt: "Traditional Dragon Tattoo",
+			title: "Traditional Dragon",
+			category: "Traditional",
+		},
+		{
+			src: gallery2,
+			alt: "Geometric Mandala Tattoo",
+			title: "Sacred Geometry",
+			category: "Geometric",
+		},
+		{
+			src: gallery3,
+			alt: "Realistic Portrait Tattoo",
+			title: "Portrait Realism",
+			category: "Realistic",
+		},
+		{
+			src: gallery4,
+			alt: "Watercolor Flower Tattoo",
+			title: "Watercolor Blooms",
+			category: "Watercolor",
+		},
+		{
+			src: gallery5,
+			alt: "Blackwork Sleeve Tattoo",
+			title: "Blackwork Sleeve",
+			category: "Blackwork",
+		},
+		{
+			src: gallery6,
+			alt: "Minimalist Line Tattoo",
+			title: "Minimalist Lines",
+			category: "Minimalist",
+		},
+		{
+			src: gallery7,
+			alt: "Neo Traditional Tattoo",
+			title: "Neo Traditional Rose",
+			category: "Traditional",
+		},
+		{
+			src: gallery7,
+			alt: "Japanese Koi Tattoo",
+			title: "Japanese Koi",
+			category: "Traditional",
+		},
+	];
 
 	return (
 		<section id="gallery" className="py-20 bg-gray-50">
@@ -139,14 +71,14 @@ export default function Gallery() {
 				</h2>
 
 				<div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-					{images.map((image) => (
+					{galleryImages.map((image, index) => (
 						<div
-							key={image.id}
+							key={index}
 							className="aspect-square overflow-hidden rounded-lg group"
 						>
 							<Image
-								src={image.image_url || "/placeholder.svg"}
-								alt={image.title}
+								src={image.src || "/placeholder.svg"}
+								alt={image.alt}
 								width={300}
 								height={300}
 								className="w-full h-full object-cover hover:scale-105 transition-transform duration-300 filter grayscale hover:grayscale-0"
@@ -156,9 +88,11 @@ export default function Gallery() {
 				</div>
 
 				<div className="text-center">
-					<button className="bg-black text-white hover:bg-gray-800">
-						VIEW ALL
-					</button>
+					<Link href="/gallery">
+						<Button className="bg-black text-white hover:bg-gray-800">
+							VIEW ALL
+						</Button>
+					</Link>
 				</div>
 			</div>
 		</section>
