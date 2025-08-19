@@ -1,47 +1,4 @@
 
-
-// export default function About() {
-// 	return (
-// 		<section id="about" className="py-20 bg-white">
-// 			<div className="container mx-auto px-4">
-// 				<div className="grid md:grid-cols-2 gap-12 items-center">
-// 					<div>
-// 						<div className="text-8xl md:text-9xl font-bold text-gray-100 mb-4">
-// 							01
-// 						</div>
-// 					</div>
-// 					<div>
-// 						<h2 className="text-4xl md:text-5xl font-bold mb-6">
-// 							MY
-// 							<br />
-// 							STORY:
-// 						</h2>
-// 						<p className="text-gray-600 mb-6 leading-relaxed">
-// 							With over a decade of experience in the tattoo industry, I&apos;ve
-// 							dedicated my life to perfecting the art of permanent body
-// 							modification. My journey began in underground studios, learning
-// 							from masters of the craft, and has evolved into creating unique
-// 							pieces that tell each client&apos;s individual story.
-// 						</p>
-// 						<p className="text-gray-600 mb-8 leading-relaxed">
-// 							Every tattoo is a collaboration between artist and canvas. I
-// 							believe in taking the time to understand your vision and bringing
-// 							it to life with precision, creativity, and respect for the
-// 							permanence of the medium.
-// 						</p>
-// 						<button
-							
-// 							className="border-black text-black hover:bg-black hover:text-white bg-transparent"
-// 						>
-// 							READ MORE
-// 						</button>
-// 					</div>
-// 				</div>
-// 			</div>
-// 		</section>
-// 	);
-// }
-
 export default function About() {
 	return (
 		<section id="about" className="py-20 bg-white relative overflow-hidden">
@@ -88,7 +45,7 @@ export default function About() {
 
 						<div className="space-y-6">
 							<p className="text-gray-700 leading-relaxed text-lg">
-								With over a decade of experience in the tattoo industry, I've
+								With over a decade of experience in the tattoo industry, I`ve
 								dedicated my life to perfecting the art of permanent body
 								modification. My journey began in underground studios, learning
 								from masters of the craft.

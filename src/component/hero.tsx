@@ -21,7 +21,7 @@ export default function Hero() {
 			</div>
 
 			<div className="relative z-10 left-75 flex-col justify-end items-end text-start text-white max-w-xl mx-auto px-2">
-				<h1 className="text-5xl md:text-8xl sm:text-4xl font-bold mb-6">I'm Void Sir.</h1>
+				<h1 className="text-5xl md:text-8xl sm:text-4xl font-bold mb-6">I`m Void Sir.</h1>
 				<p className="text-sm font-light md:text-sm mb-8 mx-auto">
 					Creating unique tattoo art that tells your story. Every piece is
 					crafted with precision and passion.
